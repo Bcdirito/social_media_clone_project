@@ -45,10 +45,9 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
         return queryset.filter(user__username__iexact=self.kwargs.get("username"))
 
 
-class CreateView(LoginRequiredMixin, SelectRelatedMixin,generic.CreateView):
+class CreatePost(LoginRequiredMixin, SelectRelatedMixin,generic.CreateView):
     fields = ("message", "group")
     model = models.Post
-    template_name = "TEMPLATE_NAME"
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
