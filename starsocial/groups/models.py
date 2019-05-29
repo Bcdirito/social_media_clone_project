@@ -7,6 +7,7 @@ from django.core.urlresolvers import reverse
 import misaka
 
 # Create your models here.
+
 User = get_user_model()
 register = template.Library()
 
@@ -31,7 +32,7 @@ class Group(models.Model):
     class Meta():
         ordering = ["name"]
 
-class GroupMembers(models.Model):
+class GroupMember(models.Model):
     group = models.ForeignKey(Group, related_name="memberships", on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name="user_groups", on_delete=models.CASCADE)
 
