@@ -27,7 +27,8 @@ class Group(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('groups:single', kwargs={'slug':self.slug})
+        print(self.slug)
+        return reverse('groups:single', kwargs={'slug':self.name})
 
     class Meta():
         ordering = ["name"]

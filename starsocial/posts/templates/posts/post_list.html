@@ -10,7 +10,7 @@
                 <ul class="list-unstyled">
                     {% for member_group in get_user_groups %}
                         <li class="group li-with-bullet">
-                            <a href="{% url 'groups:single slug=member_group.grop.slug %}"></a>
+                            <a href="{% url 'groups:single' slug=member_group.grop.slug %}"></a>
                         </li>
                     {% endfor %}
                 </ul>
